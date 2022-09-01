@@ -24,6 +24,7 @@ public class FileReader {
             String data = new String(buffer.array());
             return parse(data);
         } catch (IOException e) {
+            e.printStackTrace();
             throw new ReadingFileException(e);
         }
     }
