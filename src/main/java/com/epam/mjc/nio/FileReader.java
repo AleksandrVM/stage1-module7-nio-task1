@@ -1,6 +1,7 @@
 package com.epam.mjc.nio;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
@@ -22,7 +23,7 @@ public class FileReader {
             channel.read(buffer);
             String data = new String(buffer.array());
             return parse(data);
-        } catch (java.io.IOException e) {
+        } catch (IOException e) {
             throw new ReadingFileException(e);
         }
     }
